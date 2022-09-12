@@ -10,28 +10,15 @@
 
 int main(void)
 {
-	int d, p, q;
+	char low, e, q;
 
-	for (d = '0'; d < '9'; d++)
+	e = 'e';
+	q = 'q';
+
+	for (low = 'a'; low <= 'z'; low++)
 	{
-		for (p = d + 1; p <= '9'; p++)
-		{
-			for (q = p + 1; q <= '9'; q++)
-			{
-				if ((p != d) != q)
-				{
-					putchar(d);
-					putchar(p);
-					putchar(q);
-
-					if (d == '7' && p == '8')
-						continue;
-
-					putchar(',');
-					putchar(' ');
-				}
-			}
-		}
+		if (low != e && low != q)
+			putchar(low);
 	}
 	putchar('\n');
 

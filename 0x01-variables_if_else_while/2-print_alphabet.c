@@ -9,19 +9,12 @@
  */
 int main(void)
 {
-	int d;
+	char low;
 
-	for (d = 0; d < 100; d++)
-	{
-		putchar((d / 10) + '0');
-		putchar((d % 10) + '0');
-		if (d != 99)
-		{
-			putchar(',');
-			putchar(' ');
-		}
-	}
+	for (low = 'a'; low <= 'z'; low++)
+		putchar(low);
 	putchar('\n');
 
 	return (0);
 }
+	

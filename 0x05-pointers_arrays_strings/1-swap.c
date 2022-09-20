@@ -7,13 +7,14 @@ void swap_int(int *, int *);
  * @b:integer
  * Return:void
  */
+
 int main(void)
 {
 	a = 98;
-		b = 42;
-			printf("%d, %d\n", a, b);
-				swap_int(&a, &b);
-					printf("%d, %d\n", a, b);
-						return (0);
+	b = 42;
+	printf("%d, %d\n", a, b);
+	swap_int(&a, &b);
+	printf("%d, %d\n", a, b);
+	return (0);
 
 }

@@ -1,5 +1,5 @@
-#include "main.h"                                                                                                                               
-#include <stdlib.h>  
+#include "main.h"                                                                                                                    
+#include <stdlib.h>
 
 /**
  * argstostr - convert the params passed to the program to string

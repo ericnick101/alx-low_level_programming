@@ -7,6 +7,7 @@
  * @s2: string 2
  * Return: pointer should point to a newly allocated space in memory or NULL
  */
+
 char *str_concat(char *s1, char *s2)
 {
 	char *strnew = NULL;

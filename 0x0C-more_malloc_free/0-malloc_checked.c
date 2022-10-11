@@ -2,17 +2,17 @@
 #include <stdlib.h>
 
 /**
- * malloc_checked - Entry Point
- * @b: input amount
- * Return: pointer to new mem
+ * malloc_checked - does what malloc does and checks if null
+ * @b: size to alloc for malloc
+ * 
+ * Return: void pointer to allocated mem
  */
 void *malloc_checked(unsigned int b)
 {
-	void *n;
+	void *a;
 
-	n = malloc(b);
-
-	if (n == NULL)
+	a = malloc(b);
+	if (a == NULL)
 		exit(98);
-	return (n);
+	return (a);
 }

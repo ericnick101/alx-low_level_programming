@@ -1,22 +1,48 @@
-#include <stdio.h>
-#include "main.h"
+#include "lists.h"
 
 /**
- * _puts - prints a string
- * @str: string to print
+ * add_node_end - adds a node to the end of a linked list
+ * @head: pointer to the head of the list
+ * @str: string to be used as content of the newly added node
  *
- * Description: prints a string
- * On success: returns no error
+ * Return: address of the newly added node
  */
+list_t *add_node_end(list_t **head, const char *str)
+{
+	list_t *new_node;
+	list_t *cursor = *head;
 
-void _puts(char *str)
+	new_node = malloc(sizeof(list_t));
+	if (new_node != NULL)
+	{
+		new_node->str = strdup(str);
+		new_node->len = _strlen(str);
+		new_node->next = NULL;
+	}
+	else
+		return (NULL);
+	if (cursor != NULL)
+	{
+		while (cursor->next != NULL)
+			cursor = cursor->next;
+		cursor->next = new_node;
+	}
+	else
+		*head = new_node;
+	return (new_node);
+}
+
+/**
+ * _strlen - counts the length of a string
+ * @str: string to be counted
+ *
+ * Return: the length of the string
+ */
+int _strlen(const char *str)
 {
 	int i = 0;
-
-	while (*(str + i) != '\0')
-		{
-			putchar(*(str + i));
-			i++;
-		}
-	putchar(10);
+	
+	while (str[i] != '\0')
+	i++;
+	return (i);
 }

@@ -1,12 +1,25 @@
-#include "main.h"
+#include "lists.h"
 
 /**
- * reset_to_98 - resets the value of given integer to 98
- * @n: parameter
- * Return : nothing
+ * print_list - prints all the elements of a linked list
+ * @h: head of the list
+ *
+ * Return: the number of nodes
  */
 
-void reset_to_98(int *n)
+size_t print_list(const list_t *h)
 {
-	*n = 98;
+	const list_t *cursor = h;
+	size_t count = 0;
+
+	while (cursor != NULL)
+	{
+		if (cursor->str != NULL)
+			printf("[%d] %s\n", cursor->len, cursor->str);
+		else
+			printf("[0] (nil)\n");
+		count += 1;
+		cursor = cursor->next;
+		}
+	return (count);
 }

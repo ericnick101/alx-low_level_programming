@@ -1,18 +1,22 @@
-#include <stdio.h>
-#include <string.h>
-#include "main.h"
+#include <stdlib.h>
+#include "lists.h"
 
 /**
- * print_rev - Prints a string in reverse order
- * @s: String to reverse
- * Return: Nothing
+ * free_list - frees a list_t list
+ * @head: pointer to the start of the list
+ *
+ * Return: void
  */
-
-void print_rev(char *s)
+void free_list(list_t *head)
 {
-	int len = strlen(s);
+	list_t *current, *next;
 
-	while (len--)
-		putchar(*(s + len));
-	putchar(10);
+	current = head;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current->str);
+		free(current);
+		current = next;
+	}
 }
